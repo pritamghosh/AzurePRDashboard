@@ -111,7 +111,7 @@ AzureDashboard/
 │
 ├── src/
 │   ├── main/
-│   │   ├── java/com/personal/azuredashboard/
+│   │   ├── java/io/github/pritamghosh/azuredashboard/
 │   │   │   ├── AzureDashboardApplication.java     ← Spring Boot entry point
 │   │   │   ├── config/
 │   │   │   │   ├── AzureDevOpsProperties.java     ← @ConfigurationProperties binding

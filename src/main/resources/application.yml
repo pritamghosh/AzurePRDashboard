@@ -56,7 +56,7 @@ management:
 
 logging:
   level:
-    com.personal.azuredashboard: info
+    io.github.pritamghosh.azuredashboard: info
     # Set to DEBUG during development to see WebClient request/response details
     # org.springframework.web.reactive.function.client: DEBUG
 
