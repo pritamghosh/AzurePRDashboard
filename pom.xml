@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.personal</groupId>
+    <groupId>io.github.pritamghosh</groupId>
     <artifactId>azure-dashboard</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>AzureDashboard</name>
