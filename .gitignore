@@ -1,0 +1,26 @@
+# ===== Secrets - NEVER commit =====
+src/main/resources/application-local.yml
+
+# ===== Maven =====
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ===== Node / npm =====
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log
+logs/
+
