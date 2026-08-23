@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SpringNativeSettings">
+    <option name="linkedExternalProjectsSettings">
+      <NativeProjectSettings>
+        <option name="externalProjectPath" value="-DebugSession-" />
+        <option name="runConfigurationId" value="AzureDashboardApplication" />
+      </NativeProjectSettings>
+    </option>
+  </component>
+</project>

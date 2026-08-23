@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="releases" />
+      <option name="name" value="releases" />
+      <option name="url" value="http://nexus.borders.devnet.sita.aero:8080/nexus/content/repositories/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="java.net-maven2-repository" />
+      <option name="name" value="java.net-maven2-repository" />
+      <option name="url" value="http://download.java.net/maven/2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.m2" />
+      <option name="name" value="jboss.m2" />
+      <option name="url" value="http://repository.jboss.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache-incubator" />
+      <option name="name" value="apache-incubator" />
+      <option name="url" value="http://people.apache.org/repo/m2-incubating-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="oauth" />
+      <option name="name" value="oauth" />
+      <option name="url" value="http://oauth.googlecode.com/svn/code/maven" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="gson" />
+      <option name="name" value="gson" />
+      <option name="url" value="http://google-gson.googlecode.com/svn/mavenrepo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="terracotta-repository" />
+      <option name="name" value="terracotta-repository" />
+      <option name="url" value="http://www.terracotta.org/download/reflector/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring-release" />
+      <option name="name" value="spring-release" />
+      <option name="url" value="http://maven.springframework.org/release" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache.incubating" />
+      <option name="name" value="apache.incubating" />
+      <option name="url" value="http://people.apache.org/repo/m2-incubating-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache-snapshots" />
+      <option name="name" value="apache-snapshots" />
+      <option name="url" value="http://people.apache.org/maven-snapshot-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sonatype.releases" />
+      <option name="name" value="sonatype.releases" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven central repo" />
+      <option name="name" value="maven central repo" />
+      <option name="url" value="http://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring release" />
+      <option name="name" value="spring release" />
+      <option name="url" value="http://maven.springframework.org/release" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="codehaus-repository" />
+      <option name="name" value="codehaus-repository" />
+      <option name="url" value="http://repository.codehaus.org" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jvnet-nexus-releases" />
+      <option name="name" value="jvnet-nexus-releases" />
+      <option name="url" value="https://maven.java.net/content/repositories/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="codehaus.snapshots" />
+      <option name="name" value="codehaus.snapshots" />
+      <option name="url" value="http://snapshots.repository.codehaus.org" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache-snapshot-repository" />
+      <option name="name" value="apache-snapshot-repository" />
+      <option name="url" value="http://people.apache.org/repo/m2-snapshot-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="fusesource-snapshots" />
+      <option name="name" value="fusesource-snapshots" />
+      <option name="url" value="http://repo.fusesource.com/nexus/content/groups/public-snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring-external" />
+      <option name="name" value="spring-external" />
+      <option name="url" value="http://maven.springframework.org/external" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache.m2.incubator" />
+      <option name="name" value="apache.m2.incubator" />
+      <option name="url" value="http://people.apache.org/repo/m2-snapshot-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="objectstyle" />
+      <option name="name" value="objectstyle" />
+      <option name="url" value="http://objectstyle.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="safehaus" />
+      <option name="name" value="safehaus" />
+      <option name="url" value="http://m2.safehaus.org" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="eclipse.m2" />
+      <option name="name" value="eclipse.m2" />
+      <option name="url" value="https://repo.eclipse.org/content/groups/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="fusesource.nexus.snapshot" />
+      <option name="name" value="fusesource.nexus.snapshot" />
+      <option name="url" value="http://repo.fusesource.com/nexus/content/groups/public-snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="iborders-thirdparty" />
+      <option name="name" value="iborders-thirdparty" />
+      <option name="url" value="http://nexus.borders.devnet.sita.aero:8080/nexus/content/repositories/iborders-thirdparty" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ibiblio" />
+      <option name="name" value="ibiblio" />
+      <option name="url" value="http://www.ibiblio.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="codehaus-nexus-snapshots" />
+      <option name="name" value="codehaus-nexus-snapshots" />
+      <option name="url" value="https://nexus.codehaus.org/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="java.net" />
+      <option name="name" value="java.net" />
+      <option name="url" value="https://maven-repository.dev.java.net/nonav/repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="java.net repo" />
+      <option name="name" value="java.net repo" />
+      <option name="url" value="http://download.java.net/maven/2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jetty" />
+      <option name="name" value="jetty" />
+      <option name="url" value="http://oss.sonatype.org/content/groups/jetty" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache.snapshots" />
+      <option name="name" value="apache.snapshots" />
+      <option name="url" value="http://people.apache.org/maven-snapshot-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="plexus-snapshots" />
+      <option name="name" value="plexus-snapshots" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/plexus-snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="aqute" />
+      <option name="name" value="aqute" />
+      <option name="url" value="http://www.aqute.biz/repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="java.net.shared" />
+      <option name="name" value="java.net.shared" />
+      <option name="url" value="http://download.java.net/javaee5/external/shared" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="snapshots-oss.sonatype.org" />
+      <option name="name" value="snapshots-oss.sonatype.org" />
+      <option name="url" value="http://oss.sonatype.org/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="com.fusesource.m2" />
+      <option name="name" value="com.fusesource.m2" />
+      <option name="url" value="http://repo.fusesource.com/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Codehaus" />
+      <option name="name" value="Codehaus" />
+      <option name="url" value="http://repository.codehaus.org" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="servicemix" />
+      <option name="name" value="servicemix" />
+      <option name="url" value="http://svn.apache.org/repos/asf/servicemix/m2-repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sonatype-snapshots" />
+      <option name="name" value="sonatype-snapshots" />
+      <option name="url" value="https://oss.sonatype.org/content/groups/jetty" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="plexus.snapshots" />
+      <option name="name" value="plexus.snapshots" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/plexus-snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="snapshots.jboss.org" />
+      <option name="name" value="snapshots.jboss.org" />
+      <option name="url" value="http://snapshots.jboss.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="codehaus-snapshots" />
+      <option name="name" value="codehaus-snapshots" />
+      <option name="url" value="http://nexus.codehaus.org/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="guiceyfruit.release" />
+      <option name="name" value="guiceyfruit.release" />
+      <option name="url" value="http://guiceyfruit.googlecode.com/svn/repo/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="dev.java.net" />
+      <option name="name" value="dev.java.net" />
+      <option name="url" value="http://download.java.net/maven/1" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="m2.dev.java.net" />
+      <option name="name" value="m2.dev.java.net" />
+      <option name="url" value="http://download.java.net/maven/2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="tomcat-private-repository" />
+      <option name="name" value="tomcat-private-repository" />
+      <option name="url" value="http://tomcat.apache.org/dev/dist/m2-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="codehaus.org" />
+      <option name="name" value="codehaus.org" />
+      <option name="url" value="http://snapshots.repository.codehaus.org" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="oss.sonatype.org-jboss-snapshots" />
+      <option name="name" value="oss.sonatype.org-jboss-snapshots" />
+      <option name="url" value="http://oss.sonatype.org/content/repositories/jboss-snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="terracotta-releases" />
+      <option name="name" value="terracotta-releases" />
+      <option name="url" value="http://www.terracotta.org/download/reflector/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.org-fs-releases" />
+      <option name="name" value="jboss.org-fs-releases" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/fs-releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring external" />
+      <option name="name" value="spring external" />
+      <option name="url" value="http://maven.springframework.org/external" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jvnet-nexus-snapshots" />
+      <option name="name" value="jvnet-nexus-snapshots" />
+      <option name="url" value="https://maven.java.net/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ossrh" />
+      <option name="name" value="ossrh" />
+      <option name="url" value="https://oss.sonatype.org/service/local/staging/deploy/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="antlr-snapshot" />
+      <option name="name" value="antlr-snapshot" />
+      <option name="url" value="http://antlr.org/antlr-snapshot" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss" />
+      <option name="name" value="jboss" />
+      <option name="url" value="http://repository.jboss.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache-incubating-repository" />
+      <option name="name" value="apache-incubating-repository" />
+      <option name="url" value="http://people.apache.org/repo/m2-incubating-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="apache-m2-snapshot" />
+      <option name="name" value="apache-m2-snapshot" />
+      <option name="url" value="http://people.apache.org/repo/m2-snapshot-repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="java.net.m2" />
+      <option name="name" value="java.net.m2" />
+      <option name="url" value="http://download.java.net/maven/2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.repository.releases.public" />
+      <option name="name" value="jboss.repository.releases.public" />
+      <option name="url" value="http://repository.jboss.org/nexus/content/groups/public-jboss" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven2-repository.dev.java.net" />
+      <option name="name" value="maven2-repository.dev.java.net" />
+      <option name="url" value="https://maven2-repository.dev.java.net/nonav/repository" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="FuseSource" />
+      <option name="name" value="FuseSource" />
+      <option name="url" value="http://repo.fusesource.com/nexus" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="codehaus" />
+      <option name="name" value="codehaus" />
+      <option name="url" value="http://repository.codehaus.org" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="staging.java.net" />
+      <option name="name" value="staging.java.net" />
+      <option name="url" value="https://maven.java.net/content/groups/staging" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Java.net Maven 2" />
+      <option name="name" value="Java.net Maven 2" />
+      <option name="url" value="http://download.java.net/maven/2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="openejb-3rdparty-builds" />
+      <option name="name" value="openejb-3rdparty-builds" />
+      <option name="url" value="http://svn.apache.org/repos/asf/openejb/repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="java-net" />
+      <option name="name" value="java-net" />
+      <option name="url" value="http://download.java.net/maven/2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spring-libs-release" />
+      <option name="name" value="spring-libs-release" />
+      <option name="url" value="http://repo.springsource.org/libs-release-local" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="com.springsource.repository.maven.milestone" />
+      <option name="name" value="com.springsource.repository.maven.milestone" />
+      <option name="url" value="http://maven.springframework.org/milestone" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="snapshots" />
+      <option name="name" value="snapshots" />
+      <option name="url" value="http://nexus.borders.devnet.sita.aero:8080/nexus/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="releases.java.net" />
+      <option name="name" value="releases.java.net" />
+      <option name="url" value="https://maven.java.net/content/repositories/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="SpringSource" />
+      <option name="name" value="SpringSource" />
+      <option name="url" value="http://repository.springsource.com/maven" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="terracotta-snapshots" />
+      <option name="name" value="terracotta-snapshots" />
+      <option name="url" value="http://www.terracotta.org/download/reflector/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="central" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="com.anasoft.os.repository.releases" />
+      <option name="name" value="com.anasoft.os.repository.releases" />
+      <option name="url" value="http://anasoft-os-repo.googlecode.com/svn/repository/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="bintray-jai-imageio" />
+      <option name="name" value="bintray-jai-imageio" />
+      <option name="url" value="https://www.dcm4che.org/maven2/com/sun/media/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="EclipseLink Repo" />
+      <option name="name" value="EclipseLink Repo" />
+      <option name="url" value="http://download.eclipse.org/rt/eclipselink/maven.repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="dtddoc" />
+      <option name="name" value="dtddoc" />
+      <option name="url" value="http://dtddoc.sf.net/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="thirdparty" />
+      <option name="name" value="thirdparty" />
+      <option name="url" value="http://nexus.borders.devnet.sita.aero:8080/nexus/content/repositories/thirdparty" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="uk-central-proxy" />
+      <option name="name" value="UK Nexus Central" />
+      <option name="url" value="http://nexus.borders.devnet.sita.aero:8080/nexus/content/repositories/central" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="smx-m2-repo" />
+      <option name="name" value="smx-m2-repo" />
+      <option name="url" value="http://svn.apache.org/repos/asf/servicemix/m2-repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="elasticsearch-releases" />
+      <option name="name" value="elasticsearch-releases" />
+      <option name="url" value="http://maven.elasticsearch.org/releases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ow2-snapshot" />
+      <option name="name" value="ow2-snapshot" />
+      <option name="url" value="http://repository.ow2.org/nexus/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="eclipse" />
+      <option name="name" value="eclipse" />
+      <option name="url" value="http://download.eclipse.org/rt/eclipselink/maven.repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ossrh-snapshots" />
+      <option name="name" value="ossrh-snapshots" />
+      <option name="url" value="http://oss.sonatype.org/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss-releases" />
+      <option name="name" value="jboss-releases" />
+      <option name="url" value="http://repository.jboss.org/nexus/content/groups/public-jboss" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="CodehausSnapshots" />
+      <option name="name" value="CodehausSnapshots" />
+      <option name="url" value="http://snapshots.repository.codehaus.org" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jasperreports" />
+      <option name="name" value="jasperreports" />
+      <option name="url" value="http://jasperreports.sourceforge.net/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="com.fusesource.m2.snapshot" />
+      <option name="name" value="com.fusesource.m2.snapshot" />
+      <option name="url" value="http://repo.fusesource.com/nexus/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="com.springsource.repository.maven.releases" />
+      <option name="name" value="com.springsource.repository.maven.releases" />
+      <option name="url" value="http://maven.springframework.org/release" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="com.springsource.repository.bundles.external" />
+      <option name="name" value="com.springsource.repository.bundles.external" />
+      <option name="url" value="http://repository.springsource.com/maven/bundles/external" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="java_net" />
+      <option name="name" value="java_net" />
+      <option name="url" value="http://download.java.net/maven/1" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss-deprecated" />
+      <option name="name" value="jboss-deprecated" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/deprecated" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss-public-repository-group" />
+      <option name="name" value="jboss-public-repository-group" />
+      <option name="url" value="http://repository.jboss.org/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="oss-snapshots" />
+      <option name="name" value="oss-snapshots" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ibiblio mirror" />
+      <option name="name" value="ibiblio mirror" />
+      <option name="url" value="http://mirrors.ibiblio.org/pub/mirrors/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="m1.java.net" />
+      <option name="name" value="m1.java.net" />
+      <option name="url" value="http://download.java.net/maven/1" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="spy" />
+      <option name="name" value="spy" />
+      <option name="url" value="http://files.couchbase.com/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jvnet-nexus-staging" />
+      <option name="name" value="jvnet-nexus-staging" />
+      <option name="url" value="https://maven.java.net/content/repositories/staging" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="sonatype-nexus-snapshots" />
+      <option name="name" value="sonatype-nexus-snapshots" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="oss.sonatype.org" />
+      <option name="name" value="oss.sonatype.org" />
+      <option name="url" value="http://oss.sonatype.org/content/repositories/jetty-snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="codehaus-snapshot" />
+      <option name="name" value="codehaus-snapshot" />
+      <option name="url" value="http://snapshots.repository.codehaus.org" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="glassfish-repository" />
+      <option name="name" value="glassfish-repository" />
+      <option name="url" value="http://maven.glassfish.org/content/groups/glassfish" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="com.springsource.repository.maven.snapshot" />
+      <option name="name" value="com.springsource.repository.maven.snapshot" />
+      <option name="url" value="http://maven.springframework.org/snapshot" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="repository.jboss.org" />
+      <option name="name" value="repository.jboss.org" />
+      <option name="url" value="http://repository.jboss.org/nexus/content/groups/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="servicemix.m2" />
+      <option name="name" value="servicemix.m2" />
+      <option name="url" value="http://svn.apache.org/repos/asf/servicemix/m2-repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jakarta" />
+      <option name="name" value="jakarta" />
+      <option name="url" value="http://jakarta.apache.org/commons/httpclient" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ops4j" />
+      <option name="name" value="ops4j" />
+      <option name="url" value="http://repository.ops4j.org/maven2" />
+    </remote-repository>
+  </component>
+</project>
