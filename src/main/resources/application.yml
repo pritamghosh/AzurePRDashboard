@@ -14,10 +14,11 @@ spring:
 
 azure:
   devops:
-    # ⚠ Do NOT put your real PAT here — use application-local.yml instead.
+    # ⚠ Do NOT put your real PAT here — use application-local.yml or azuredashboard.ps1 instead.
     pat: ""
-    organization: "SITA-PSE"
-    project: "Borders"
+    # ⚠ Set organization and project in azuredashboard.ps1 or application-local.yml
+    organization: ""
+    project: ""
     # General REST API version.
     api-version: "7.1"
     # Policy evaluations API requires the preview flag — kept separate so it can be

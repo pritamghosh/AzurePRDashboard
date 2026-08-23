@@ -236,6 +236,8 @@ defined in `application.yml`. No extra profile flag is needed.
 
 - **Java 25** (minimum required)
 - Maven 3.9+
+- Azure DevOps organization and project (required)
+- Azure DevOps Personal Access Token (PAT) with "Read" scope
 - _(Node.js is NOT required — the frontend-maven-plugin downloads it automatically)_
 
 ---
@@ -279,275 +281,101 @@ Open your browser at: **`http://localhost:8080`**
 
 ### Option 2b – Windows PowerShell Script
 
-For Windows users, the `azuredashboard.ps1` script provides a convenient way to run the application with custom configuration embedded in the script.
+For Windows users, the `azuredashboard.ps1` script provides a convenient one-command launch with embedded configuration.
 
-**Script features:**
-- Automatically sets Java environment (`JAVA_HOME` and `PATH`)
-- Defines repository groups for organizing your pull requests
-- Passes configuration to the JAR via command-line arguments
-- No need for a separate `application-local.yml` file
-
-**Usage:**
+**Edit these settings in the script:**
 
 ```powershell
-# Run from the project root directory
-.\azuredashboard.ps1
-```
+# Personal Access Token (required)
+$pat = "YOUR_PAT_VALUE_HERE"
 
-**Configuring Java Location:**
+# Azure DevOps organization and project (required)
+$organization = "YOUR_ORGANIZATION_NAME"
+$project = "YOUR_PROJECT_NAME"
 
-If Java 25 is installed in a different location on your system, update the path at the top of `azuredashboard.ps1`:
-
-```powershell
-# ✏️ Update this path if Java 25 is installed elsewhere
+# Java location (update if installed elsewhere)
 $env:JAVA_HOME="C:\Program Files\Java\jdk-25.0.2"
-```
 
-To find your Java installation path:
-```powershell
-# Run this to find where Java is installed
-where java
-# Or check: C:\Program Files\Java (Windows default location)
-```
+# Server port (default 8080)
+$serverPort = 8080
 
-**Customizing repository groups in the script:**
-
-Edit `azuredashboard.ps1` and update the `$repositoryGroups` array to match your repository naming conventions:
-
-```powershell
+# Repository groups (customize to your needs)
 $repositoryGroups = @(
-    @{
-        name = "Your Team 1"
-        prefixes = @("team1-", "proj-a-")
-    },
-    @{
-        name = "Your Team 2"
-        prefixes = @("team2-", "proj-b-")
-    }
+    @{ name = "Team A"; prefixes = @("team-a-", "proj1-") },
+    @{ name = "Team B"; prefixes = @("team-b-", "proj2-") }
 )
 ```
 
-**Configuring the Personal Access Token (PAT):**
-
-The script requires you to set your Azure DevOps PAT. You have two options:
-
-**Option A: Direct (default - simpler)**
-
-Edit `azuredashboard.ps1` at the top and replace the placeholder:
-
-```powershell
-# ⚠️ Personal Access Token (PAT) Configuration
-$pat = "YOUR_PAT_VALUE_HERE"     # ← Replace with your actual PAT
-```
-
-Then run:
+**Run:**
 ```powershell
 .\azuredashboard.ps1
 ```
 
-**Option B: Environment Variable (more secure)**
-
-Uncomment the environment variable section in the script (comment out the direct `$pat` line):
-
-```powershell
-# Uncomment this block and comment out the direct $pat line above
-if ($null -eq $env:AZURE_DEVOPS_PAT -or $env:AZURE_DEVOPS_PAT -eq "") {
-    Write-Host "ERROR: AZURE_DEVOPS_PAT environment variable is not set." -ForegroundColor Red
-    exit 1
-}
-$pat = $env:AZURE_DEVOPS_PAT
-```
-
-Then set the environment variable before running:
-
-```powershell
-$env:AZURE_DEVOPS_PAT = "YOUR_ACTUAL_PAT"
-.\azuredashboard.ps1
-```
-
-**Script validation:**
-
-The script will error and exit if the PAT is not properly configured, with helpful instructions on how to fix it.
-
-> **Tip:** For persistent storage of your PAT, set it in Windows environment variables via **Settings → Environment Variables** instead of in the script.
-
----
-
-### Option 2c – Command-Line Arguments (Cross-Platform)
-
-```bash
-java -jar target/azure-dashboard-1.0.0-SNAPSHOT.jar --azure.devops.pat="YOUR_PAT_HERE"
-```
-
-**Method 2 — Java system properties** (`-D` flags, before `-jar`)
-
-```bash
-java -Dazure.devops.pat="YOUR_PAT_HERE" -jar target/azure-dashboard-1.0.0-SNAPSHOT.jar
-```
-
-**Method 3 — Environment variables**
-
-Spring Boot automatically maps environment variables to properties using the convention
-`AZURE_DEVOPS_PAT` → `azure.devops.pat` (dots become underscores, all uppercase):
-
-```powershell
-# PowerShell — current session
-$env:AZURE_DEVOPS_PAT = "YOUR_PAT_HERE"
-java -jar target/azure-dashboard-1.0.0-SNAPSHOT.jar
-```
-
-> **Precedence (highest → lowest):**  
-> `--` command-line args → `-D` system properties → environment variables → `application-local.yml` → `application.yml`
-
-> ⚠️ Avoid putting the PAT in shell history. Prefer environment variables set via the Windows UI (see below).
-
----
-
-### Option 3 – IntelliJ IDEA Run Configuration
-
-1. Open the **Run/Debug Configurations** dialog
-2. Add a new **Spring Boot** configuration
-3. Set **Main class**: `com.personal.azuredashboard.AzureDashboardApplication`
-4. No additional environment variables are needed  
-   _(config is loaded automatically from `application-local.yml`)_
-7. Run it, then separately start the frontend with `npm run dev` in the `frontend/` directory
+The script validates your configuration and displays helpful error messages if any required value is missing.
 
 ---
 
 ## API Endpoints
 
-All endpoints return JSON. Base URL in production: `http://localhost:8080`
+All endpoints return JSON. Base URL: `http://localhost:8080`
 
-### `GET /api/pullrequests/assigned`
-
-Returns active pull requests **created by** the authenticated user.
-
-**Response:**
-```json
-[
-  {
-    "id": 42,
-    "title": "Fix login timeout bug",
-    "repositoryName": "my-service",
-    "status": "active",
-    "createdDate": "2026-05-20T09:15:00Z",
-    "author": "Your Name",
-    "url": "https://dev.azure.com/org/project/_git/my-service/pullrequest/42"
-  }
-]
-```
-
----
-
-### `GET /api/pullrequests/review`
-
-Returns active pull requests where the authenticated user is listed as a **reviewer**.
-
-**Response:** Same shape as above, `author` field contains the PR creator's name.
-
----
-
-### `GET /api/dashboard/summary`
-
-Returns counts and the server-side refresh timestamp.
-
-**Response:**
-```json
-{
-  "assignedCount": 3,
-  "reviewCount": 7,
-  "lastRefreshed": "2026-05-31T12:00:00Z"
-}
-```
-
----
-
-### `GET /actuator/health`
-
-Spring Boot health check endpoint.
-
-```json
-{ "status": "UP" }
-```
+| Endpoint | Description | Response |
+|----------|-------------|----------|
+| `GET /api/pullrequests/assigned` | Active PRs created by you | `[{id, title, repositoryName, status, createdDate, author, url}]` |
+| `GET /api/pullrequests/review` | Active PRs awaiting your review | Same shape as above |
+| `GET /api/dashboard/summary` | PR counts and last refresh time | `{assignedCount, reviewCount, lastRefreshed}` |
+| `GET /actuator/health` | Spring Boot health check | `{status: "UP"}` |
 
 ---
 
 ## Build & Package
 
-### Maven lifecycle phases relevant to this project
-
-| Phase | What happens |
-|-------|-------------|
-| `generate-resources` | `frontend-maven-plugin` runs `npm install` then `npm run build` (outputs to `frontend/dist/`) |
-| `process-resources` | `maven-resources-plugin` copies `frontend/dist/` → `target/classes/static/` |
-| `compile` | Java source files compiled |
-| `package` | Spring Boot repackages the JAR; static React files are bundled inside |
-
-### Skipping the frontend build (faster iteration on backend only)
+The Maven build process automatically:
+1. Compiles React frontend with Vite (`frontend/dist/`)
+2. Copies frontend build into Spring Boot static resources
+3. Packages everything into a single JAR with embedded static files
 
 ```bash
-mvn spring-boot:run -Dfrontend.skip=true
+mvn clean package
 ```
 
-> Note: this only skips the frontend plugin if you add the `skip` configuration to `pom.xml`.  
-> Otherwise, skip by simply running `mvn spring-boot:run` — the plugin only executes during `package`.
+That's it. The JAR is self-contained and ready to run.
 
 ---
 
 ## How Azure DevOps Authentication Works
 
-Azure DevOps supports **HTTP Basic Authentication** using a PAT as the password field:
+The app uses **HTTP Basic Auth** with a Personal Access Token (PAT) as the password:
 
 ```
 Authorization: Basic BASE64(":" + PAT)
 ```
 
-Note the leading colon — the username is intentionally left empty.
+(Username is intentionally empty; Azure DevOps uses the colon as delimiter.)
 
-This header is added to **every request** by the `WebClient` beans configured in `WebClientConfig.java`.  
-The PAT is read from configuration properties and is **never logged** anywhere in the application.
+**User Resolution:**
 
-### User Identity Resolution
-
-When the app starts and the dashboard is loaded, it first calls:
-
+On startup, the app calls:
 ```
 GET https://app.vssps.visualstudio.com/_apis/profile/profiles/me?api-version=7.1
 ```
 
-This returns the authenticated user's **GUID** (identity ID), which is then used in subsequent PR queries:
+This returns your GUID (identity ID), which is used for subsequent queries:
+- My PRs: `searchCriteria.creatorId={guid}`
+- Review requests: `searchCriteria.reviewerId={guid}`
 
-- PRs created by me: `searchCriteria.creatorId={guid}`
-- PRs awaiting my review: `searchCriteria.reviewerId={guid}`
+The PAT is configured at runtime and **never logged**.
 
 ---
 
 ## PR Info Column
 
-Every PR table (My PRs, Awaiting Review, and the Repository Group dialog) renders a unified **Info** column powered by the `PRInfoCell` component. The column displays:
+Every PR table renders a unified **Info** column powered by the `PRInfoCell` component with:
 
-| Indicator | Description |
-|-----------|-------------|
-| **Status icon** | Merge-readiness icon (click to open the detail popover). Reflects real policy state immediately on load — policy evaluations are fetched eagerly for every row as soon as the table renders. |
-| **Auto-complete badge** _(purple play icon)_ | Shown when auto-complete has been enabled for the PR; tooltip shows who set it. |
-| **Work-item count** _(link icon + count)_ | Number of linked work items, fetched eagerly on mount. Tooltip shows the human-readable label. |
-| **Refresh button** _(mini rotate icon)_ | Inline per-row refresh button — re-fetches that single PR from Azure DevOps without refreshing the whole dashboard. Available in all tables including the Repository Group pop-up dialog. |
-
-### Eager policy fetch
-
-`PRInfoCell` issues two API calls on mount for every row:
-
-* `GET /api/pullrequests/{id}/policy-evaluations` — used to immediately reflect blocking-policy violations in the status icon even before the user opens the popover.
-* `GET /api/pullrequests/{id}/workitems` — used to show the work-item count badge inline.
-
-The results are passed as **preloaded props** to `PRMergeStatusBadge`; the badge uses them immediately and skips its own lazy fetch when the popover is opened.
-
-### Repository Group dialog refresh
-
-When the refresh button is clicked inside the Repository Group pop-up:
-
-1. The parent (`App`) is notified via `onRefreshPR`, updating the My PRs / Review tabs in the background.
-2. The widget also re-fetches the individual PR and patches its own dialog snapshot, so the row inside the dialog updates without closing it.
+- **Status icon** — merge-readiness (click for details popover)
+- **Auto-complete badge** _(purple play icon)_ — shown when auto-complete is enabled
+- **Work-item count** _(link icon)_ — number of linked work items
+- **Refresh button** _(rotate icon)_ — re-fetch that single PR without refreshing the whole dashboard
 
 ---
 
@@ -563,31 +391,6 @@ logging:
     org.springframework.web.reactive.function.client: DEBUG
     reactor.netty.http.client: DEBUG
 ```
-
-### Change the server port
-
-**Permanently** — in `application-local.yml`:
-
-```yaml
-server:
-  port: 9090
-```
-
-**One-off at launch** — no file change needed:
-
-```powershell
-# Command-line argument
-java -jar target/azure-dashboard-1.0.0-SNAPSHOT.jar --server.port=9090
-
-# Or as a system property
-java -Dserver.port=9090 -jar target/azure-dashboard-1.0.0-SNAPSHOT.jar
-
-# Or as an environment variable (PowerShell)
-$env:SERVER_PORT = "9090"
-java -jar target/azure-dashboard-1.0.0-SNAPSHOT.jar
-```
-
-> When using the Vite dev server (Option 1), also update the proxy target in `frontend/vite.config.ts` to match the new port.
 
 ### Switch Azure DevOps project without rebuilding
 
